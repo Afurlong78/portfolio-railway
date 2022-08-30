@@ -6,7 +6,7 @@ router.post("/contact", (req, res) => {
   const { error } = contactValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  console.log(req.body);
+  // console.log(req.body);
 
   const transporter = nodemailer.createTransport({
     service: "gmail",

@@ -19,4 +19,8 @@ app.get("/api", (req, res) => {
 app.use(express.json());
 app.use("/api", contactRoute);
 
-app.listen(5000, () => console.log("Express server is running."));
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 5000;
+}
+app.listen(port, () => console.log("Express server is running."));
